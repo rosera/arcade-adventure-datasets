@@ -1,0 +1,205 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with analyzing financial data in BigQuery to identify trends and anomalies. What's the first step you should take?\n\n A) Load financial data into BigQuery\n B)  Visualize data with Looker Studio\n C)  Use BigQuery ML to predict stock prices",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Load financial data into BigQuery",
+        "nextNode": "load_data"
+      },
+      {
+        "text": "Visualize data with Looker Studio",
+        "nextNode": "visualize_early"
+      },
+      {
+        "text": "Use BigQuery ML to predict stock prices",
+        "nextNode": "ml_early"
+      }
+    ]
+  },
+  "load_data": {
+    "text": "Good choice! Loading data is the foundation. What are some common sources of financial data for BigQuery?\n\n A)  CSV files from your internal systems\n B)  Real-time market data feeds\n C)  Public datasets like SEC filings\n D)  All of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "CSV files from your internal systems",
+        "nextNode": "data_sources"
+      },
+      {
+        "text": "Real-time market data feeds",
+        "nextNode": "data_sources"
+      },
+      {
+        "text": "Public datasets like SEC filings",
+        "nextNode": "data_sources"
+      },
+      {
+        "text": "All of the above",
+        "nextNode": "data_sources"
+      }
+    ]
+  },
+  "visualize_early": {
+    "text": "Visualizing data is important, but you need to load the data first! Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "ml_early": {
+    "text": "BigQuery ML is powerful, but let's focus on the foundational analysis first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "data_sources": {
+    "text": "Correct! Financial data can come from various sources. Now, what are some key considerations for storing financial data in BigQuery?\n\n A)  Data security and compliance (e.g., PCI DSS)\n B)  Schema design for efficient querying\n C)  Data governance and access control\n D)  All of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Data security and compliance (e.g., PCI DSS)",
+        "nextNode": "data_considerations"
+      },
+      {
+        "text": "Schema design for efficient querying",
+        "nextNode": "data_considerations"
+      },
+      {
+        "text": "Data governance and access control",
+        "nextNode": "data_considerations"
+      },
+      {
+        "text": "All of the above",
+        "nextNode": "data_considerations"
+      }
+    ]
+  },
+  "data_considerations": {
+    "text": "Exactly! Security, schema design, and governance are crucial. Now, how can you perform time-series analysis on financial data in BigQuery?\n\n A)  Use window functions like `LAG()` and `LEAD()`\n B)  Export data to a spreadsheet\n C)  Use BigQuery ML for time series forecasting",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use window functions like `LAG()` and `LEAD()`",
+        "nextNode": "window_functions"
+      },
+      {
+        "text": "Export data to a spreadsheet",
+        "nextNode": "spreadsheet_no"
+      },
+      {
+        "text": "Use BigQuery ML for time series forecasting",
+        "nextNode": "ml_later"
+      }
+    ]
+  },
+  "window_functions": {
+    "text": "Correct! Window functions are powerful for time-series analysis. What are some common financial calculations you can perform in BigQuery?\n\n A)  Moving averages\n B)  Risk measures (e.g., Value at Risk)\n C)  Profit and loss calculations\n D)  All of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Moving averages",
+        "nextNode": "financial_calculations"
+      },
+      {
+        "text": "Risk measures (e.g., Value at Risk)",
+        "nextNode": "financial_calculations"
+      },
+      {
+        "text": "Profit and loss calculations",
+        "nextNode": "financial_calculations"
+      },
+      {
+        "text": "All of the above",
+        "nextNode": "financial_calculations"
+      }
+    ]
+  },
+  "spreadsheet_no": {
+    "text": "Spreadsheets are limited for large-scale financial analysis. BigQuery is more suitable. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "data_considerations"
+      }
+    ]
+  },
+  "ml_later": {
+    "text": "BigQuery ML is useful for forecasting, but let's focus on basic analysis first. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "data_considerations"
+      }
+    ]
+  },
+  "financial_calculations": {
+    "text": "Right! BigQuery can handle complex financial calculations. To visualize your findings, what tool can you use?\n\n A)  Looker Studio\n B)  Google Sheets\n C)  Manually create charts",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x2",
+    "choices": [
+      {
+        "text": "Looker Studio",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "Google Sheets",
+        "nextNode": "sheets_limited"
+      },
+      {
+        "text": "Manually create charts",
+        "nextNode": "manual_charts"
+      }
+    ]
+  },
+  "sheets_limited": {
+    "text": "While Sheets is useful, Looker Studio provides more advanced visualization for financial data. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "financial_calculations"
+      }
+    ]
+  },
+  "manual_charts": {
+    "text": "Manual chart creation is time-consuming. Looker Studio automates this process. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "financial_calculations"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully analyzed financial data in BigQuery. You loaded data, considered security and schema design, used window functions, and visualized your results.\n\n**Advantages of BigQuery for Financial Analysis:**\n* Scalability and performance for large financial datasets\n* SQL support for complex financial calculations\n* Integration with other GCP services for data ingestion and visualization\n* Security and compliance features for sensitive financial data\n\n**Disadvantages of BigQuery for Financial Analysis:**\n* Can be more expensive than specialized financial databases\n* Requires SQL knowledge for analysis\n* May require data governance policies for compliance\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with designing a data warehouse solution for your company using BigQuery. You have data from various sources. What's your first step?\n\n A)  Create a BigQuery dataset\n B)  Load data into BigQuery\n C)  Define a schema for your data",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Create a BigQuery dataset",
+        "nextNode": "create_dataset"
+      },
+      {
+        "text": "Load data into BigQuery",
+        "nextNode": "load_data_early"
+      },
+      {
+        "text": "Define a schema for your data",
+        "nextNode": "define_schema_early"
+      }
+    ]
+  },
+  "create_dataset": {
+    "text": "Good start! You need a dataset to organize your tables. Now, where will you source your data from?\n\n A)  Cloud Storage\n B)  Cloud SQL\n C)  On-premises databases\n D)  All of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Cloud Storage",
+        "nextNode": "cloud_storage"
+      },
+      {
+        "text": "Cloud SQL",
+        "nextNode": "cloud_sql"
+      },
+      {
+        "text": "On-premises databases",
+        "nextNode": "on_premises"
+      },
+      {
+        "text": "All of the above",
+        "nextNode": "all_sources"
+      }
+    ]
+  },
+  "load_data_early": {
+    "text": "Hold on! You need a place to store your data first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "define_schema_early": {
+    "text": "While defining a schema is important, you need to figure out your data sources first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "cloud_storage": {
+    "text": "Cloud Storage is a common source for data warehousing. What format is your data in?\n\n A)  CSV\n B)  JSON\n C)  Avro\n D)  Parquet\n E)  Any of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "CSV",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "JSON",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Avro",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Parquet",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Any of the above",
+        "nextNode": "data_formats"
+      }
+    ]
+  },
+  "cloud_sql": {
+    "text": "Cloud SQL can be a source for data warehousing. How will you efficiently transfer data from Cloud SQL to BigQuery?\n\n A)  Manually export and import data\n B)  Use the `bq` command-line tool\n C)  Federated queries",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Manually export and import data",
+        "nextNode": "manual_no"
+      },
+      {
+        "text": "Use the `bq` command-line tool",
+        "nextNode": "bq_tool"
+      },
+      {
+        "text": "Federated queries",
+        "nextNode": "federated_queries"
+      }
+    ]
+  },
+  "on_premises": {
+    "text": "On-premises data needs to be transferred to Google Cloud. What service can help with this?\n\n A)  Cloud Storage Transfer Service\n B)  Cloud SQL\n C)  Cloud Functions",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Cloud Storage Transfer Service",
+        "nextNode": "transfer_service"
+      },
+      {
+        "text": "Cloud SQL",
+        "nextNode": "cloud_sql_no"
+      },
+      {
+        "text": "Cloud Functions",
+        "nextNode": "functions_no"
+      }
+    ]
+  },
+  "all_sources": {
+    "text": "Exactly! BigQuery can handle data from various sources. Now, let's focus on data from Cloud Storage. What format is your data in?\n\n A)  CSV\n B)  JSON\n C)  Avro\n D)  Parquet\n E)  Any of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "CSV",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "JSON",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Avro",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Parquet",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Any of the above",
+        "nextNode": "data_formats"
+      }
+    ]
+  },
+  "data_formats": {
+    "text": "BigQuery supports various formats! How do you ensure efficient querying of this data?\n\n A)  Partition and cluster tables\n B)  Store data in Cloud Storage\n C)  Use only CSV format",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Partition and cluster tables",
+        "nextNode": "partition_cluster"
+      },
+      {
+        "text": "Store data in Cloud Storage",
+        "nextNode": "cloud_storage_no2"
+      },
+      {
+        "text": "Use only CSV format",
+        "nextNode": "csv_no"
+      }
+    ]
+  },
+  "manual_no": {
+    "text": "Manual methods are inefficient for data warehousing. Try a more automated approach. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "cloud_sql"
+      }
+    ]
+  },
+  "bq_tool": {
+    "text": "The `bq` tool is useful, but for ongoing data transfers, consider other options. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "cloud_sql"
+      }
+    ]
+  },
+  "federated_queries": {
+    "text": "Correct! Federated queries allow querying data directly in Cloud SQL. Now, let's move on to optimizing BigQuery. How do you ensure efficient querying of data?\n\n A)  Partition and cluster tables\n B)  Store data in Cloud Storage\n C)  Use only CSV format",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Partition and cluster tables",
+        "nextNode": "partition_cluster"
+      },
+      {
+        "text": "Store data in Cloud Storage",
+        "nextNode": "cloud_storage_no2"
+      },
+      {
+        "text": "Use only CSV format",
+        "nextNode": "csv_no"
+      }
+    ]
+  },
+  "transfer_service": {
+    "text": "Correct! This service helps automate data transfers. Now, let's focus on data in Cloud Storage. What format is your data in?\n\n A)  CSV\n B)  JSON\n C)  Avro\n D)  Parquet\n E)  Any of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "CSV",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "JSON",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Avro",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Parquet",
+        "nextNode": "data_formats"
+      },
+      {
+        "text": "Any of the above",
+        "nextNode": "data_formats"
+      }
+    ]
+  },
+  "cloud_sql_no": {
+    "text": "Cloud SQL is not the right service for transferring data from on-premises. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "on_premises"
+      }
+    ]
+  },
+  "functions_no": {
+    "text": "Cloud Functions are for event-driven code, not bulk data transfers. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "on_premises"
+      }
+    ]
+  },
+  "partition_cluster": {
+    "text": "Excellent! Partitioning and clustering significantly improve query performance. What other optimization techniques can you apply?\n\n A)  Use appropriate data types\n B)  Optimize query design\n C)  Pre-compute aggregations\n D)  All of the above",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x2",
+    "choices": [
+      {
+        "text": "Use appropriate data types",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "Optimize query design",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "Pre-compute aggregations",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "All of the above",
+        "nextNode": "game_over"
+      }
+    ]
+  },
+  "cloud_storage_no2": {
+    "text": "Data is already in BigQuery. Focus on optimizing queries within BigQuery. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "data_formats"
+      }
+    ]
+  },
+  "csv_no": {
+    "text": "While CSV is common, other formats like Parquet or Avro can be more efficient. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "data_formats"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully designed and optimized a data warehouse solution in BigQuery. You handled diverse data sources, optimized table structures, and applied query optimization techniques.\n\n**Advantages of BigQuery as a Data Warehouse:**\n* Scalability and performance for large datasets\n* Serverless architecture, no infrastructure management\n* Cost-effective with pay-per-query pricing\n* Built-in features for data analysis and ML\n\n**Disadvantages of BigQuery as a Data Warehouse:**\n* Can be more expensive for high query volumes\n* Limited control over underlying infrastructure\n* Vendor lock-in with Google Cloud Platform\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

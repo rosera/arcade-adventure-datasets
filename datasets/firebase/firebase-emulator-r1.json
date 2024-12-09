@@ -1,0 +1,218 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with setting up a local development environment for a Firebase project. You need to use the Firebase Emulator Suite. What's your first step?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Install Node.js and npm",
+        "nextNode": "install_tools"
+      },
+      {
+        "text": "Immediately start the emulators",
+        "nextNode": "start_emulators_early" 
+      },
+      {
+        "text": "Deploy the application to production",
+        "nextNode": "deploy_early"
+      }
+    ]
+  },
+  "install_tools": {
+    "text": "Good choice! You need Node.js and npm to install the Firebase CLI. Now that you have those installed, what's the next step to set up the emulators?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Install the Firebase CLI",
+        "nextNode": "install_firebase_cli"
+      },
+      {
+        "text": "Configure the emulators",
+        "nextNode": "configure_emulators_early"
+      },
+      {
+        "text": "Start writing code for the Firebase project",
+        "nextNode": "write_code_early"
+      }
+    ]
+  },
+  "install_firebase_cli": {
+    "text": "Excellent! You've installed the Firebase CLI. How do you initialize a Firebase project in your local directory?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Run `firebase init`",
+        "nextNode": "firebase_init"
+      },
+      {
+        "text": "Run `firebase deploy`",
+        "nextNode": "deploy_early"
+      },
+      {
+        "text": "Create a `firebase.json` file manually",
+        "nextNode": "manual_config"
+      }
+    ]
+  },
+  "firebase_init": {
+    "text": "Great job! `firebase init` is the right command. During the initialization, you're prompted to select Firebase products. Which ones do you need for the Emulator Suite?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Emulators",
+        "nextNode": "select_emulators"
+      },
+      {
+        "text": "Firestore, Realtime Database, Storage, etc.",
+        "nextNode": "select_products_only"
+      },
+      {
+        "text": "It doesn't matter, I'll select them all",
+        "nextNode": "select_all"
+      }
+    ]
+  },
+  "select_emulators": {
+    "text": "Correct! You've successfully initialized the Emulator Suite. What's the next step to start using the emulators?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Run `firebase emulators:start`",
+        "nextNode": "start_emulators"
+      },
+      {
+        "text": "Write some unit tests",
+        "nextNode": "write_tests_early" 
+      },
+      {
+        "text": "Run `firebase serve`",
+        "nextNode": "firebase_serve"
+      }
+    ]
+  },
+  "start_emulators": {
+    "text": "Awesome! You've started the emulators. Now you have a local development environment for your Firebase project.  You can now interact with the emulated services as if they were the real cloud services.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x2",
+    "choices": [
+      {
+        "text": "Continue",
+        "nextNode": "game_over"
+      }
+    ]
+  }, 
+  "start_emulators_early": {
+    "text": "Whoops! You need to install the Firebase CLI and initialize a Firebase project first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "configure_emulators_early": {
+    "text": "Hold on! You need to install the Firebase CLI and initialize a project before configuring the emulators. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "install_tools" 
+      }
+    ]
+  },
+  "write_code_early": {
+    "text": "Not quite yet! You need to set up the emulators before writing code. Go back and try the correct steps.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "install_tools"
+      }
+    ]
+  },
+  "deploy_early": {
+    "text": "Whoa there! You should develop and test your application locally using the emulators before deploying to production. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "manual_config": {
+    "text": "It's not recommended to manually create the `firebase.json` file. `firebase init` handles the project setup correctly. Let's go back and try that.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "install_firebase_cli"
+      }
+    ]
+  },
+  "select_products_only": {
+    "text": "Not quite. While you'll eventually configure these products, you need to specifically select 'Emulators' during `firebase init` to set up the Emulator Suite. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_init"
+      }
+    ]
+  },
+  "select_all": {
+    "text": "It's best to be selective and choose only the emulators you need for this project.  Go back and choose 'Emulators' specifically.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_init"
+      }
+    ]
+  },
+  "write_tests_early": {
+    "text": "While writing tests is important, let's focus on getting the emulators running first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "select_emulators" 
+      }
+    ]
+  },
+  "firebase_serve": {
+    "text": "`firebase serve` is used to test your web app locally, not for starting the emulators. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "select_emulators"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You've successfully set up the Firebase Emulator Suite for local development. You can now build and test your Firebase application efficiently. Would you like to play again?",
+    "image": "https://firebase.google.com/images/social.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

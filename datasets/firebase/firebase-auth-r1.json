@@ -1,0 +1,218 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with adding user authentication to your company's new web app. You've chosen Firebase Authentication. What's your first step?\n\n A) Enable Authentication in Firebase console\n B) Install the Firebase CLI\n C) Write frontend code for user login",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Enable Authentication in Firebase console",
+        "nextNode": "enable_auth"
+      },
+      {
+        "text": "Install the Firebase CLI",
+        "nextNode": "install_cli"
+      },
+      {
+        "text": "Write frontend code for user login",
+        "nextNode": "frontend_first"
+      }
+    ]
+  },
+  "enable_auth": {
+    "text": "Great start! You've enabled Authentication in the console. Now, which authentication method will you implement first?\n\n A) Email/Password\n B) Google Sign-In\n C) Anonymous Sign-In",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Email/Password",
+        "nextNode": "email_password"
+      },
+      {
+        "text": "Google Sign-In",
+        "nextNode": "google_signin"
+      },
+      {
+        "text": "Anonymous Sign-In",
+        "nextNode": "anonymous_signin"
+      }
+    ]
+  },
+  "install_cli": {
+    "text": "While the CLI is useful for other Firebase services, it's not essential for the initial Authentication setup. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "frontend_first": {
+    "text": "Hold on! You need to configure Authentication in Firebase first before writing frontend code. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "email_password": {
+    "text": "Good choice! Email/Password is a common method. Now, how do you integrate this method into your web app?\n\n A) Use the Firebase SDK\n B) Manually code the authentication logic\n C) Use a third-party authentication service",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use the Firebase SDK",
+        "nextNode": "firebase_sdk"
+      },
+      {
+        "text": "Manually code the authentication logic",
+        "nextNode": "manual_code"
+      },
+      {
+        "text": "Use a third-party authentication service",
+        "nextNode": "third_party"
+      }
+    ]
+  },
+  "google_signin": {
+    "text": "Google Sign-In is convenient, but let's start with the fundamental Email/Password method first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "enable_auth"
+      }
+    ]
+  },
+  "anonymous_signin": {
+    "text": "Anonymous Sign-In is useful for temporary users, but let's focus on  Email/Password for now. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "enable_auth"
+      }
+    ]
+  },
+  "firebase_sdk": {
+    "text": "Correct! The Firebase SDK provides pre-built functions for authentication. Now, what should you do on the client-side to handle user authentication?\n\n A) Write code to capture user credentials and pass them to the SDK\n B) Configure server-side authentication logic\n C) Set up a database to store user data",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Write code to capture user credentials and pass them to the SDK",
+        "nextNode": "capture_credentials"
+      },
+      {
+        "text": "Configure server-side authentication logic",
+        "nextNode": "server_side"
+      },
+      {
+        "text": "Set up a database to store user data",
+        "nextNode": "database_early"
+      }
+    ]
+  },
+  "manual_code": {
+    "text": "While possible, manually coding authentication is complex and prone to errors. The Firebase SDK simplifies this process. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "email_password"
+      }
+    ]
+  },
+  "third_party": {
+    "text": "Third-party services can be helpful, but let's focus on Firebase's built-in capabilities for now. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "email_password"
+      }
+    ]
+  },
+  "capture_credentials": {
+    "text": "Exactly! You need to securely handle user credentials. What's a crucial security measure to implement with Email/Password authentication?\n\n A) Enforce strong password policies\n B) Use only HTTP for communication\n C) Store passwords in plain text",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Enforce strong password policies",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "Use only HTTP for communication",
+        "nextNode": "http_no"
+      },
+      {
+        "text": "Store passwords in plain text",
+        "nextNode": "plaintext_no"
+      }
+    ]
+  },
+  "server_side": {
+    "text": "Server-side logic is important for some authentication scenarios, but the core logic for Email/Password happens on the client-side with Firebase. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_sdk"
+      }
+    ]
+  },
+  "database_early": {
+    "text": "While you might store user data eventually, the immediate focus is on implementing the authentication flow. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_sdk"
+      }
+    ]
+  },
+  "http_no": {
+    "text": "Never use HTTP for authentication! Always use HTTPS to encrypt communication. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "capture_credentials"
+      }
+    ]
+  },
+  "plaintext_no": {
+    "text": "Absolutely not! Passwords should never be stored in plain text. Hashing and salting are essential. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "capture_credentials"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully implemented Email/Password authentication using Firebase Authentication. You enabled the service, chose the right method, and used the Firebase SDK to handle user credentials securely.\n\n**Advantages of Firebase Authentication:**\n* Easy to implement with pre-built UI and SDKs\n* Secure authentication with strong password enforcement\n* Supports various authentication methods\n* Integrates seamlessly with other Firebase services\n\n**Disadvantages of Firebase Authentication:**\n* Limited customization options for complex authentication flows\n* Vendor lock-in with Google Cloud Platform\n* Can be more expensive for high volumes of users\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

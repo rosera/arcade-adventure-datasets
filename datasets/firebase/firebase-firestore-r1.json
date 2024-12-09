@@ -1,0 +1,180 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with securing your company's new social media app built on Firestore.  Your first task is to set up Firestore Security Rules. Where do you start?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Dive straight into writing rules!",
+        "nextNode": "write_rules"
+      },
+      {
+        "text": "Learn about Firestore Security Rules first.",
+        "nextNode": "learn_rules"
+      }
+    ]
+  },
+  "learn_rules": {
+    "text": "Good choice! Understanding the basics is key. Firestore Security Rules use a declarative language. Which Firestore services do these rules apply to?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Only Realtime Database",
+        "nextNode": "realtime_only"
+      },
+      {
+        "text": "Realtime Database, Cloud Firestore, and Cloud Storage",
+        "nextNode": "all_services"
+      }
+    ]
+  },
+  "realtime_only": {
+    "text": "Not quite. Firestore Security Rules apply to more than just the Realtime Database. Go back and review the services.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "learn_rules"
+      }
+    ]
+  },
+  "all_services": {
+    "text": "Correct! Now, how do these rules work with your app?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "They are enforced client-side.",
+        "nextNode": "client_side"
+      },
+      {
+        "text": "They are enforced server-side by Firestore.",
+        "nextNode": "server_side"
+      }
+    ]
+  },
+  "client_side": {
+    "text": "Incorrect. Security rules are not enforced client-side. This would be a major security risk! Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Try again",
+        "nextNode": "all_services"
+      }
+    ]
+  },
+  "server_side": {
+    "text": "Exactly! This ensures data integrity. Now, let's get to writing some rules. What's the first step in defining your rules?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Specify the database structure.",
+        "nextNode": "structure"
+      },
+      {
+        "text": "Immediately write conditions for read/write access.",
+        "nextNode": "write_conditions"
+      }
+    ]
+  },
+  "write_rules": {
+    "text": "Whoa there! It's important to understand the basics before diving into writing rules. Go back and learn about Firestore Security Rules first.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "structure": {
+    "text": "Correct! You need to match the database structure in your rules. What syntax do you use to define the path to your data?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use 'match' with forward slashes (/).",
+        "nextNode": "match_slash"
+      },
+      {
+        "text": "Use 'path' with backslashes (\\).",
+        "nextNode": "path_backslash"
+      }
+    ]
+  },
+  "write_conditions": {
+    "text": "Not quite. While you'll need to write conditions, first you need to specify the structure of your database in the rules. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Try again",
+        "nextNode": "server_side"
+      }
+    ]
+  },
+  "match_slash": {
+    "text": "Yes! You're on a roll. Now, to control access, what keywords do you use in your rules?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "'allow' and 'deny'",
+        "nextNode": "allow_deny"
+      },
+      {
+        "text": "'read' and 'write'",
+        "nextNode": "read_write"
+      }
+    ]
+  },
+  "path_backslash": {
+    "text": "Incorrect. Firestore Security Rules use 'match' with forward slashes (/) to define paths. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Try again",
+        "nextNode": "structure"
+      }
+    ]
+  },
+  "allow_deny": {
+    "text": "Correct! You use 'allow' and 'deny' to specify access.  You've successfully defined your first set of Firestore Security Rules!",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Assessment",
+        "nextNode": "game_over"
+      }
+    ]
+  },
+  "read_write": {
+    "text": "Close, but not quite. While 'read' and 'write' are important, the keywords for controlling access are 'allow' and 'deny'. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Try again",
+        "nextNode": "match_slash"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You've successfully navigated the basics of Firestore Security Rules. Your app's data is now secured with your custom rules. Ready to take on more challenges?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

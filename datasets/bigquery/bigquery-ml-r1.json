@@ -1,0 +1,218 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with building a machine learning model to predict customer churn. You want to leverage BigQuery ML to do this directly in BigQuery. What's your first step?\n\n A) Prepare the data in BigQuery\n B) Choose a machine learning model\n C)  Write the prediction query",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Prepare the data in BigQuery",
+        "nextNode": "prepare_data"
+      },
+      {
+        "text": "Choose a machine learning model",
+        "nextNode": "choose_model_early"
+      },
+      {
+        "text": "Write the prediction query",
+        "nextNode": "prediction_early"
+      }
+    ]
+  },
+  "prepare_data": {
+    "text": "Great start! Data preparation is crucial. What's an important aspect of preparing data for ML in BigQuery?\n\n A)  Split data into training and testing sets\n B)  Store data in Cloud Storage\n C)  Use only JSON format for data",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Split data into training and testing sets",
+        "nextNode": "split_data"
+      },
+      {
+        "text": "Store data in Cloud Storage",
+        "nextNode": "cloud_storage_no"
+      },
+      {
+        "text": "Use only JSON format for data",
+        "nextNode": "json_no"
+      }
+    ]
+  },
+  "choose_model_early": {
+    "text": "While choosing a model is important, you need to prepare your data first! Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "prediction_early": {
+    "text": "Hold on! You haven't even built the model yet. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "split_data": {
+    "text": "Correct! Splitting data helps evaluate model performance. Now, which BigQuery ML model is suitable for predicting customer churn (a binary classification problem)?\n\n A)  Linear regression\n B)  Logistic regression\n C)  K-means clustering",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Linear regression",
+        "nextNode": "linear_no"
+      },
+      {
+        "text": "Logistic regression",
+        "nextNode": "logistic_regression"
+      },
+      {
+        "text": "K-means clustering",
+        "nextNode": "kmeans_no"
+      }
+    ]
+  },
+  "cloud_storage_no": {
+    "text": "BigQuery ML works directly on data within BigQuery. No need for Cloud Storage in this case. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "prepare_data"
+      }
+    ]
+  },
+  "json_no": {
+    "text": "BigQuery ML supports various data formats, not just JSON. Focus on data splitting. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "prepare_data"
+      }
+    ]
+  },
+  "linear_no": {
+    "text": "Linear regression is for predicting continuous values, not binary outcomes like churn. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "split_data"
+      }
+    ]
+  },
+  "logistic_regression": {
+    "text": "Right! Logistic regression is suitable for binary classification. How do you create this model in BigQuery ML?\n\n A) Use the `CREATE MODEL` statement with the appropriate options\n B)  Export data to another ML platform\n C)  Manually code the model from scratch",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use the `CREATE MODEL` statement with the appropriate options",
+        "nextNode": "create_model"
+      },
+      {
+        "text": "Export data to another ML platform",
+        "nextNode": "export_no"
+      },
+      {
+        "text": "Manually code the model from scratch",
+        "nextNode": "manual_no"
+      }
+    ]
+  },
+  "kmeans_no": {
+    "text": "K-means clustering is for unsupervised learning, not for predicting churn. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "split_data"
+      }
+    ]
+  },
+  "create_model": {
+    "text": "Correct! `CREATE MODEL` is the way to go. What options would you specify for logistic regression?\n\n A)  `MODEL_TYPE='LOGISTIC_REG'`\n B)  `MODEL_TYPE='LINEAR_REG'`\n C)  `MODEL_TYPE='KMEANS'`",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "`MODEL_TYPE='LOGISTIC_REG'`",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "`MODEL_TYPE='LINEAR_REG'`",
+        "nextNode": "linear_again"
+      },
+      {
+        "text": "`MODEL_TYPE='KMEANS'`",
+        "nextNode": "kmeans_again"
+      }
+    ]
+  },
+  "export_no": {
+    "text": "BigQuery ML allows you to build the model directly within BigQuery. No need to export. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "logistic_regression"
+      }
+    ]
+  },
+  "manual_no": {
+    "text": "BigQuery ML simplifies model creation. No need for manual coding. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "logistic_regression"
+      }
+    ]
+  },
+  "linear_again": {
+    "text": "You already ruled out linear regression! It's for continuous values, not classification. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "create_model"
+      }
+    ]
+  },
+  "kmeans_again": {
+    "text": "K-means is for clustering, not classification. You need logistic regression. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "create_model"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully built a churn prediction model using BigQuery ML. You prepared the data, chose the right model, and used the `CREATE MODEL` statement.\n\n**Advantages of BigQuery ML:**\n* Build and deploy models directly in BigQuery\n* Easy to use with SQL\n* Scalable and cost-effective\n* Leverages BigQuery's infrastructure and security\n\n**Disadvantages of BigQuery ML:**\n* Limited model selection compared to dedicated ML platforms\n* Less flexibility for complex model customization\n* May require data transformations for optimal performance\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}

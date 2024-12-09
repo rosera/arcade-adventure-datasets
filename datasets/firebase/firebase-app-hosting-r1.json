@@ -1,0 +1,207 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with deploying a new web app for your company. You've chosen Firebase App Hosting. What's your first step?\n\n A) Install the Firebase CLI\n B) Create a Firebase project\n C) Write the web app code",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Install the Firebase CLI",
+        "nextNode": "install_cli"
+      },
+      {
+        "text": "Create a Firebase project",
+        "nextNode": "create_project" 
+      },
+      {
+        "text": "Write the web app code",
+        "nextNode": "write_code" 
+      }
+    ]
+  },
+  "install_cli": {
+    "text": "Good choice! You need the Firebase CLI to interact with Firebase. Now, initialize Firebase in your project directory. What command do you use?\n\n A) `firebase init`\n B) `firebase deploy`\n C) `firebase login`",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "`firebase init`",
+        "nextNode": "firebase_init"
+      },
+      {
+        "text": "`firebase deploy`",
+        "nextNode": "deploy_early" 
+      },
+      {
+        "text": "`firebase login`",
+        "nextNode": "login_first" 
+      }
+    ]
+  },
+  "create_project": { 
+    "text": "Not quite the first step! You need to install the Firebase CLI before creating a project. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start" 
+      }
+    ]
+  },
+  "write_code": {
+    "text": "While you'll need code eventually, it's not the first step. You need to set up your Firebase environment first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start" 
+      }
+    ]
+  },
+  "firebase_init": {
+    "text": "Correct! `firebase init` sets up your project. Now, select 'Hosting'. What's next?\n\n A)  Configure a public directory\n B)  Deploy to Firebase\n C)  Connect to your GitHub repo",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Configure a public directory",
+        "nextNode": "public_directory" 
+      },
+      {
+        "text": "Deploy to Firebase",
+        "nextNode": "deploy_early" 
+      },
+      {
+        "text": "Connect to your GitHub repo",
+        "nextNode": "github_early" 
+      }
+    ]
+  },
+  "login_first": {
+    "text": "Whoops! You need to initialize Firebase in your project first. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "install_cli" 
+      }
+    ]
+  },
+  "deploy_early": {
+    "text": "Slow down! You haven't configured your project yet. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_init" 
+      }
+    ]
+  },
+  "public_directory": {
+    "text": "Right! You need to specify where your web app files are. Now, for easier deployments, what Firebase feature can you use?\n\n A)  Connect to your GitHub repo\n B)  Use Firebase Realtime Database\n C)  Set up Cloud Functions",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Connect to your GitHub repo",
+        "nextNode": "github_connect" 
+      },
+      {
+        "text": "Use Firebase Realtime Database",
+        "nextNode": "database_no" 
+      },
+      {
+        "text": "Set up Cloud Functions",
+        "nextNode": "functions_no" 
+      }
+    ]
+  },
+  "github_early": {
+    "text": "While connecting to GitHub is helpful, it's not the immediate next step. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "firebase_init" 
+      }
+    ]
+  },
+  "github_connect": {
+    "text": "Excellent! Connecting to GitHub streamlines deployments. Finally, deploy your app. What command do you use?\n\n A) `firebase deploy`\n B) `git push`\n C) `firebase init`",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "`firebase deploy`",
+        "nextNode": "game_over" 
+      },
+      {
+        "text": "`git push`",
+        "nextNode": "git_push" 
+      },
+      {
+        "text": "`firebase init`",
+        "nextNode": "init_again" 
+      }
+    ]
+  },
+  "database_no": {
+    "text": "While Realtime Database is useful, it's not for deployments. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "public_directory" 
+      }
+    ]
+  },
+  "functions_no": {
+    "text": "Cloud Functions are great for backend logic, but not the focus here. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "public_directory" 
+      }
+    ]
+  },
+  "git_push": {
+    "text": "Close, but not quite! You use `firebase deploy` to deploy to Firebase Hosting. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "github_connect" 
+      }
+    ]
+  },
+  "init_again": {
+    "text": "You already initialized Firebase! Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "github_connect" 
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully deployed your web app using Firebase App Hosting. You leveraged the CLI, configured your project, and even connected to GitHub for streamlined deployments.\n\n**Advantages of Firebase App Hosting:**\n* Fast and secure hosting with global CDN\n* Easy setup and deployment with Firebase CLI\n* Free tier for basic usage\n* Integration with other Firebase services\n\n**Disadvantages of Firebase App Hosting:**\n* Limited customization options compared to VPS\n* Can be more expensive for high traffic\n* Vendor lock-in with Google Cloud Platform\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start" 
+      }
+    ]
+  }
+}

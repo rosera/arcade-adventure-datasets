@@ -1,0 +1,226 @@
+{
+  "start": {
+    "text": "You're a Cloud Engineer tasked with efficiently ingesting data into BigQuery from a data lake stored in Cloud Storage. The data is in Avro format. What's your first step?\n\n A) Create a BigQuery dataset\n B) Define the Avro schema\n C)  Write a data pipeline using Dataflow",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Create a BigQuery dataset",
+        "nextNode": "create_dataset"
+      },
+      {
+        "text": "Define the Avro schema",
+        "nextNode": "define_schema"
+      },
+      {
+        "text": "Write a data pipeline using Dataflow",
+        "nextNode": "dataflow_early"
+      }
+    ]
+  },
+  "create_dataset": {
+    "text": "Good start! You need a dataset to store your tables. Now, how will you define the structure of your data in BigQuery?\n\n A)  Infer schema from the Avro files\n B)  Manually define the schema in BigQuery\n C)  Use a predefined schema from another table",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Infer schema from the Avro files",
+        "nextNode": "infer_schema"
+      },
+      {
+        "text": "Manually define the schema in BigQuery",
+        "nextNode": "manual_schema"
+      },
+      {
+        "text": "Use a predefined schema from another table",
+        "nextNode": "predefined_schema"
+      }
+    ]
+  },
+  "define_schema": {
+    "text": "While defining the Avro schema is important, it's not the very first step. You need a place to store your data first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "dataflow_early": {
+    "text": "Dataflow is a powerful tool for data pipelines, but you're not ready for it yet. You need to prepare your BigQuery environment first. Go back and try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "start"
+      }
+    ]
+  },
+  "infer_schema": {
+    "text": "Excellent choice! BigQuery can automatically infer the schema from Avro files. Now, how will you load the data?\n\n A) Use the BigQuery web UI\n B) Use the `bq` command-line tool\n C) Write a load job with the BigQuery API",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use the BigQuery web UI",
+        "nextNode": "web_ui"
+      },
+      {
+        "text": "Use the `bq` command-line tool",
+        "nextNode": "bq_tool"
+      },
+      {
+        "text": "Write a load job with the BigQuery API",
+        "nextNode": "bq_api"
+      }
+    ]
+  },
+  "manual_schema": {
+    "text": "Manually defining the schema can be tedious. Since you have Avro files, BigQuery can infer the schema for you. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "create_dataset"
+      }
+    ]
+  },
+  "predefined_schema": {
+    "text": "While reusing schemas can be useful, in this case, you can leverage the schema information within the Avro files. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "create_dataset"
+      }
+    ]
+  },
+  "web_ui": {
+    "text": "The web UI is good for exploration, but for efficient data loading, what's a more programmatic approach?\n\n A) Use Cloud Functions\n B) Use the `bq` command-line tool\n C) Write a load job with the BigQuery API",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Use Cloud Functions",
+        "nextNode": "functions_no"
+      },
+      {
+        "text": "Use the `bq` command-line tool",
+        "nextNode": "bq_tool"
+      },
+      {
+        "text": "Write a load job with the BigQuery API",
+        "nextNode": "bq_api"
+      }
+    ]
+  },
+  "bq_tool": {
+    "text": "The `bq` tool is useful for ad-hoc loading, but for production, what's a more robust option?\n\n A) Write a load job with the BigQuery API\n B) Use the BigQuery web UI\n C)  Manually upload data through the console",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Write a load job with the BigQuery API",
+        "nextNode": "bq_api"
+      },
+      {
+        "text": "Use the BigQuery web UI",
+        "nextNode": "web_ui_again"
+      },
+      {
+        "text": "Manually upload data through the console",
+        "nextNode": "manual_upload"
+      }
+    ]
+  },
+  "bq_api": {
+    "text": "Correct! The BigQuery API provides flexibility and control for data loading. Finally, to optimize query performance on your Avro data, what should you consider?\n\n A)  Partitioning and clustering your tables\n B)  Storing data in Cloud SQL instead\n C)  Using only CSV format for data",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Partitioning and clustering your tables",
+        "nextNode": "game_over"
+      },
+      {
+        "text": "Storing data in Cloud SQL instead",
+        "nextNode": "cloud_sql_no"
+      },
+      {
+        "text": "Using only CSV format for data",
+        "nextNode": "csv_no"
+      }
+    ]
+  },
+  "functions_no": {
+    "text": "Cloud Functions are great for event-driven tasks, but not ideal for bulk data loading. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "web_ui"
+      }
+    ]
+  },
+  "web_ui_again": {
+    "text": "You've already explored the web UI. For production, consider a more programmatic approach. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "bq_tool"
+      }
+    ]
+  },
+  "manual_upload": {
+    "text": "Manual uploads are not suitable for large datasets or automated pipelines. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "bq_tool"
+      }
+    ]
+  },
+  "cloud_sql_no": {
+    "text": "Cloud SQL is a relational database, not suited for the scale and analytical needs of this data. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "bq_api"
+      }
+    ]
+  },
+  "csv_no": {
+    "text": "While CSV is common, Avro offers better performance and schema evolution for BigQuery. Try again.",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "x1",
+    "choices": [
+      {
+        "text": "Go back",
+        "nextNode": "bq_api"
+      }
+    ]
+  },
+  "game_over": {
+    "text": "Congratulations! You successfully ingested and optimized Avro data in BigQuery. You created a dataset, leveraged schema inference, used the BigQuery API, and considered partitioning/clustering for performance.\n\n**Advantages of Avro with BigQuery:**\n* Efficient binary format for data serialization\n* Supports schema evolution\n* Good performance with BigQuery's columnar storage\n* Language-agnostic, widely used in data pipelines\n\n**Disadvantages of Avro with BigQuery:**\n* Requires schema definition and management\n* Can be more complex to process than simpler formats like CSV\n* Not as human-readable as text-based formats\n\nWould you like to play again?",
+    "image": "https://storage.googleapis.com/spls/arcade/badges/gcp-data-badge.png",
+    "score": "win",
+    "choices": [
+      {
+        "text": "Play again",
+        "nextNode": "start"
+      }
+    ]
+  }
+}
